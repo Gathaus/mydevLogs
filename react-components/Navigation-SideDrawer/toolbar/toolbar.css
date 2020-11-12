@@ -1,0 +1,71 @@
+.toolbar {
+	padding-top: 40px;
+}
+.Toolbar__Header {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	background-color: beige;
+	transition: background-color .6s ease-in-out;
+}
+.Toolbar__Header:hover {
+	background-color: white;
+}
+a {
+	color: black !important;
+}
+@media (max-width: 768px) {
+	.toolbar__navigation-items {
+		display: none;
+	}
+	.toolbar__logo {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+@media (min-width: 769px) {
+	.toolbar__toggle-button {
+		display: none;
+	}
+	.toolbar__navigation-items {
+		font-size: 12px;
+		color: #23232c;
+		font-weight: 700;
+		text-transform: uppercase;
+		position: relative;
+		display: block;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin-right: 40px;
+	}
+	.toolbar__navigation-items a {
+		margin-left: 40px;
+		background-image: linear-gradient(black, black);
+		/*                   ↓ height of underline  */
+		background-size: 0% 2px;
+		/*                        ↓ y position of underline. you can change as 50% to see it. */
+		background-position: 0% 24px;
+		background-repeat: no-repeat;
+		transition: background-size 0.3s linear;
+	}
+	.toolbar__navigation-items a:hover {
+		background-size: 100% 2px;
+	}
+	.toolbar__navigation-items .nav-link {
+		padding: 0 0 15px 0 !important;
+	}
+	.toolbar__logo {
+		margin-top: 30px;
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.logo-light {
+	opacity: 1;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}

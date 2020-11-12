@@ -1,0 +1,82 @@
+
+.Carouse_Image-link {
+	height: 38.1em;
+}
+.Carousel__Image-header {
+	position: absolute;
+	font-family: "Sofia Pro", Poppins, sans-serif;
+	text-align: center;
+	line-height: 61px;
+	letter-spacing: 0px;
+	font-weight: 300;
+	font-size: 50px;
+	top: 52.4%;
+	left: 19.7%;
+	animation: opacityAnimation 1.3s ease-in;
+}
+.Carousel__Image-link {
+	position: absolute;
+	font-family: Poppins;
+	color: rgb(255, 255, 255);
+	text-align: left;
+	line-height: 9px;
+	letter-spacing: 0px;
+	font-weight: 700;
+	font-size: 10px;
+	top: 75.4%;
+	left: 26.4%;
+	text-decoration: underline !important;
+	animation: moveUp 1.3s ease-in;
+}
+
+.Carouse_Image-link img {
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+}
+.Carousel_Image-header {
+	position: absolute;
+	font-size: 155px;
+	margin-top: 100px;
+}
+
+@keyframes opacityAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes moveUp {
+	0% {
+		opacity: 0;
+		margin-top: 100px;
+	}
+	100% {
+		margin-top: 0px;
+		opacity: 1;
+	}
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
