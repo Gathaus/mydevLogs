@@ -1,0 +1,27 @@
+.Newsletter__Padder-class{
+    padding-bottom: 5em;
+}
+.Newsletter__Section-container:before {
+	content: "";
+	display: block;
+	margin: 0 40px;
+	border-top: 1px solid #f1f2f4;
+}
+
+.Newsletter__Section-container {
+	display: block;
+	text-align: center;
+}
+.Newsletter__Section-Header {
+	color: #23232c;
+	font-size: 24px;
+	font-weight: 400;
+}
+.Newsletter__Section-span {
+	color: #7c7c80;
+	font-size: 14px;
+	font-family: "Poppins", sans-serif;
+	line-height: 2.14286;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}

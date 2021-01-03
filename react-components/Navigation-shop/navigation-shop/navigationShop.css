@@ -1,0 +1,5 @@
+.Navigation__General__Container{
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+}

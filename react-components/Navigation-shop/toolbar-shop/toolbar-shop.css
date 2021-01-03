@@ -1,0 +1,173 @@
+.toolbar {
+	padding-top: 40px;
+}
+.Navbar__Container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.Toolbar__Shop__Header {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	background-color: orange;
+	transition: background-color 0.6s ease-in-out;
+}
+.Toolbar__Shop__Hover-trick:hover {
+}
+
+.Toolbar__Shop__Header:hover {
+	background-color: transparent;
+}
+
+.Toolbar__Shop__Header a {
+	color: black !important;
+}
+@media (max-width: 768px) {
+	.toolbar__Shop__navigation-items {
+		display: none;
+	}
+	.toolbar__Shop__logo {
+		display: flex;
+		justify-content: center;
+	}
+	.Toolbar_Search-container {
+		position: absolute;
+		width: 150px;
+		left: 0%;
+	}
+	.Toolbar__Shop__Search-text {
+		position: relative;
+		margin-bottom: 10px;
+		margin-right: 50px;
+		outline: 0;
+		border-width: 0 0 2px;
+		height: 20px;
+		border: 0;
+		border-bottom: 2px solid #e4e6eb;
+		transition: border 0.35s ease-in-out;
+		background-color: transparent;
+		width: 60%;
+	}
+	.Toolbar__Shop__Search-text:focus,
+	.Toolbar__Shop__Search-text:hover {
+		border-bottom: 2px solid #333;
+	}
+}
+.Toolbar__Shop__Icon-container {
+	position: relative;
+	padding-left: 100px;
+	font-size: 18px;
+}
+.Toolbar__Shop__Icon-container svg {
+	margin-right: 25px;
+}
+.Toolbar__Shop__Menu-container .NavigationSubMenu__Container {
+	visibility: hidden;
+	transition: 0.5s all;
+	transition-delay: 0.55s;
+	opacity: 0;
+}
+.Toolbar__Shop__Menu-container:hover .NavigationSubMenu__Container {
+	z-index: 9998;
+	visibility: visible;
+	transition: opacity 0.3s ease-in-out;
+	transition-delay: 0s;
+	opacity: 1;
+}
+
+.Toolbar_Menu:hover + .Toolbar__Shop__Submenu {
+	visibility: hidden;
+}
+
+@media (min-width: 769px) {
+	.Toolbar__Shop__Black-ball {
+		font-size: 11.5px;
+		color: #fff;
+		font-weight: 600;
+		text-align: center;
+		line-height: 22px;
+		display: inline-block;
+		border-radius: 50%;
+		width: 20px;
+		height: 20px;
+		position: relative;
+		right: 0;
+		top: 50%;
+		background-color: #23232c;
+		margin-left: -20px;
+	}
+	.Toolbar__Shop__User-icon {
+		font-size: 20px;
+	}
+	.toolbar__Shop__toggle-button {
+		display: none;
+	}
+	.toolbar__Shop__navigation-items {
+		font-size: 12px;
+		color: #23232c;
+		font-weight: 700;
+		text-transform: uppercase;
+		position: relative;
+		display: block;
+		display: flex;
+    }	
+  
+	.Toolbar__Shop__Links-container .Toolbar__Shop__Menu-container:first-of-type a{
+        margin-left: 0;
+        
+	}
+	.Toolbar__Shop__Menu-container{
+		display: inline-block;
+	}
+	.toolbar__Shop__navigation-items a {
+		margin-left: 40px;
+		background-image: linear-gradient(black, black);
+		/*                   ↓ height of underline  */
+		background-size: 0% 2px;
+		/*                        ↓ y position of underline. you can change as 50% to see it. */
+		background-position: 0% 24px;
+		background-repeat: no-repeat;
+		transition: background-size 0.3s linear;
+	}
+	.toolbar__Shop__navigation-items a:hover {
+		background-size: 100% 2px;
+	}
+	.toolbar__Shop__navigation-items .nav-link {
+		padding: 0 0 15px 0 !important;
+	}
+	.toolbar__Shop__logo {
+        position: absolute;
+        left: 44%;
+        top: 40%;
+	}
+	.Toolbar_Search-container {
+		position: absolute;
+		width: 150px;
+		left: 0%;
+	}
+	.Toolbar__Shop__Search-text {
+		position: relative;
+		margin-bottom: 10px;
+		margin-right: 50px;
+		outline: 0;
+		border-width: 0 0 2px;
+		height: 20px;
+		border: 0;
+		border-bottom: 2px solid #e4e6eb;
+		transition: border 0.35s ease-in-out;
+		background-color: transparent;
+		width: 60%;
+	}
+	.Toolbar__Shop__Search-text:focus,
+	.Toolbar__Shop__Search-text:hover {
+		border-bottom: 2px solid #333;
+	}
+}
+
+.logo-light {
+	opacity: 1;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
