@@ -1,0 +1,34 @@
+C:\Users\Lenovo\source\repos\NorthwindBackend\Entities\bin\Debug\netstandard2.0\Entities.deps.json
+C:\Users\Lenovo\source\repos\NorthwindBackend\Entities\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\Lenovo\source\repos\NorthwindBackend\Entities\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\Lenovo\source\repos\NorthwindBackend\Entities\bin\Debug\netstandard2.0\Core.dll
+C:\Users\Lenovo\source\repos\NorthwindBackend\Entities\bin\Debug\netstandard2.0\Core.pdb
+C:\Users\Lenovo\source\repos\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.csprojAssemblyReference.cache
+C:\Users\Lenovo\source\repos\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.dll
+C:\Users\Lenovo\source\repos\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.pdb
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\Entities\bin\Debug\netstandard2.0\Entities.deps.json
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\Entities\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\Entities\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\Entities\bin\Debug\netstandard2.0\Core.dll
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\Entities\bin\Debug\netstandard2.0\Core.pdb
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.csprojAssemblyReference.cache
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.dll
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.pdb
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\Entities\bin\Debug\netstandard2.0\Entities.deps.json
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\Entities\bin\Debug\netstandard2.0\Entities.dll
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\Entities\bin\Debug\netstandard2.0\Entities.pdb
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\Entities\bin\Debug\netstandard2.0\Core.dll
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\Entities\bin\Debug\netstandard2.0\Core.pdb
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.csprojAssemblyReference.cache
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.AssemblyInfoInputs.cache
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.AssemblyInfo.cs
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.csproj.CopyComplete
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.dll
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\Entities\obj\Debug\netstandard2.0\Entities.pdb

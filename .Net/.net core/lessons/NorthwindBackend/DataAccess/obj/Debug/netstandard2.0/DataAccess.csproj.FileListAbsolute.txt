@@ -1,0 +1,40 @@
+C:\Users\Lenovo\source\repos\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\Core.dll
+C:\Users\Lenovo\source\repos\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\Lenovo\source\repos\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.csprojAssemblyReference.cache
+C:\Users\Lenovo\source\repos\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\DataAccess.deps.json
+C:\Users\Lenovo\source\repos\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\DataAccess.dll
+C:\Users\Lenovo\source\repos\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\DataAccess.pdb
+C:\Users\Lenovo\source\repos\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\Core.pdb
+C:\Users\Lenovo\source\repos\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\Lenovo\source\repos\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.dll
+C:\Users\Lenovo\source\repos\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.pdb
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\DataAccess.deps.json
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\DataAccess.dll
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\DataAccess.pdb
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\Core.dll
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\Entities.dll
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\Core.pdb
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\Entities.pdb
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.csprojAssemblyReference.cache
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.dll
+C:\Users\Lenovo\source\repos\NorthwindBackend Kurs 4\NorthwindBackend3\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.pdb
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\DataAccess.deps.json
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\DataAccess.dll
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\DataAccess.pdb
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\Core.dll
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\Entities.dll
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\Core.pdb
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\DataAccess\bin\Debug\netstandard2.0\Entities.pdb
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.csprojAssemblyReference.cache
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfoInputs.cache
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfo.cs
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CopyComplete
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.dll
+D:\Udemy\queue\4.NET Core 3.0 & C# 7 Backend Frontend Geliştirici Kursu - 4\6. Servis Odaklı Sistemlerle Çalışmak\NorthwindBackend3\NorthwindBackend\DataAccess\obj\Debug\netstandard2.0\DataAccess.pdb
