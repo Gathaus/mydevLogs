@@ -314,3 +314,13 @@ C:\Users\Dell\Desktop\mydevLogs\.Net\NorthWind\Web\obj\Debug\net5.0\Web.pdb
 C:\Users\Dell\Desktop\mydevLogs\.Net\NorthWind\Web\obj\Debug\net5.0\Web.genruntimeconfig.cache
 C:\Users\Dell\Desktop\mydevLogs\.Net\NorthWind\Web\obj\Debug\net5.0\Razor\Views\Customers\ReadSessionEntity.cshtml.g.cs
 C:\Users\Dell\Desktop\mydevLogs\.Net\NorthWind\Web\obj\Debug\net5.0\Razor\Views\Customers\WriteSessionEntity.cshtml.g.cs
+C:\Users\Dell\Desktop\mydevLogs\.Net\NorthWind\Web\obj\Debug\net5.0\Razor\Views\Customers\Login.cshtml.g.cs
+C:\Users\Dell\Desktop\mydevLogs\.Net\NorthWind\Web\obj\Debug\net5.0\Razor\Views\Customers\Secured.cshtml.g.cs
+C:\Users\Dell\Desktop\mydevLogs\.Net\NorthWind\Web\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Dell\Desktop\mydevLogs\.Net\NorthWind\Web\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Dell\Desktop\mydevLogs\.Net\NorthWind\Web\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Dell\Desktop\mydevLogs\.Net\NorthWind\Web\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Dell\Desktop\mydevLogs\.Net\NorthWind\Web\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Dell\Desktop\mydevLogs\.Net\NorthWind\Web\obj\Debug\net5.0\Razor\Views\Customers\Denied.cshtml.g.cs
+C:\Users\Dell\Desktop\mydevLogs\.Net\NorthWind\Web\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\Dell\Desktop\mydevLogs\.Net\NorthWind\Web\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs

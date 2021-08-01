@@ -9,6 +9,10 @@ using Data;
 using Data.Concrete.EfCore.Contexts;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Security.Claims;
 
 namespace Web.Controllers
 {
@@ -171,9 +175,9 @@ namespace Web.Controllers
         {
             var category = new Category
             {
-                CategoryId=9999,
-                CategoryName="Test",
-                Description="test description"
+                CategoryId = 9999,
+                CategoryName = "Test",
+                Description = "test description"
 
             };
             HttpContext.Session.SetString("testSessionEntity", JsonConvert.SerializeObject(category));
@@ -184,10 +188,50 @@ namespace Web.Controllers
         {
             var sessionData = HttpContext.Session.GetString("testSessionEntity");
             var category = JsonConvert.DeserializeObject<Category>(sessionData);
-            ViewBag.sessionData = category.CategoryName?? "Session couldn't read";
+            ViewBag.sessionData = category.CategoryName ?? "Session couldn't read";
             return View();
         }
 
+        [Authorize(Roles="Admin")]
+        public IActionResult Secured()
+        {
+            return View();
+        }
+        [HttpGet("login")]
+        public IActionResult Login()
+        {
+            return View();
+        }
 
+        [HttpPost("login")]
+        public async Task<IActionResult> Login(string username, string password)
+        {
+            if (username == "mert" && password == "mert")
+            {
+                var claims = new List<Claim>();
+                claims.Add(new Claim("username", username));
+                claims.Add(new Claim(ClaimTypes.NameIdentifier, username));
+
+                var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+                await HttpContext.SignInAsync(claimsPrincipal);
+                return Redirect("/home");
+            }
+            return BadRequest();
+        }
+
+        [Authorize]
+        [HttpGet("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return Redirect("/");
+        }
+        
+        [HttpGet("denied")]
+        public IActionResult Denied()
+        {
+            return View();
+        }
     }
 }
