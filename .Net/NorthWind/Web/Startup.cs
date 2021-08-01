@@ -25,8 +25,11 @@ namespace Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllersWithViews();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(7);
+            });
             services.AddDbContext<NorthWindContext>(options =>
     options.UseSqlServer(Configuration.GetConnectionString("LocalConnection")));
         }
@@ -51,11 +54,12 @@ namespace Web
 
             app.UseAuthorization();
 
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Customers}/{action=Index}/{id?}");
             });
         }
     }

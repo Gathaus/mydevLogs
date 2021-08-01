@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Data;
 using Data.Concrete.EfCore.Contexts;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace Web.Controllers
 {
@@ -149,5 +151,43 @@ namespace Web.Controllers
         {
             return _context.Customers.Any(e => e.CustomerId == id);
         }
+
+        public IActionResult WriteSession()
+        {
+            var sessionData = "Test session data";
+            HttpContext.Session.SetString("testSession", sessionData);
+            return View();
+
+        }
+
+        public IActionResult ReadSession()
+        {
+            var sessionData = HttpContext.Session.GetString("testSession");
+            ViewBag.sessionData = sessionData ?? "Session couldn't read";
+            return View();
+        }
+
+        public IActionResult WriteSessionEntity()
+        {
+            var category = new Category
+            {
+                CategoryId=9999,
+                CategoryName="Test",
+                Description="test description"
+
+            };
+            HttpContext.Session.SetString("testSessionEntity", JsonConvert.SerializeObject(category));
+            return View();
+
+        }
+        public IActionResult ReadSessionEntity()
+        {
+            var sessionData = HttpContext.Session.GetString("testSessionEntity");
+            var category = JsonConvert.DeserializeObject<Category>(sessionData);
+            ViewBag.sessionData = category.CategoryName?? "Session couldn't read";
+            return View();
+        }
+
+
     }
 }
