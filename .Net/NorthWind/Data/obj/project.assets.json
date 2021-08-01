@@ -6028,11 +6028,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dell\\source\\repos\\NorthWind\\Data\\Data.csproj",
+      "projectUniqueName": "C:\\Users\\Dell\\Desktop\\mydevLogs\\.Net\\NorthWind\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "C:\\Users\\Dell\\source\\repos\\NorthWind\\Data\\Data.csproj",
+      "projectPath": "C:\\Users\\Dell\\Desktop\\mydevLogs\\.Net\\NorthWind\\Data\\Data.csproj",
       "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dell\\source\\repos\\NorthWind\\Data\\obj\\",
+      "outputPath": "C:\\Users\\Dell\\Desktop\\mydevLogs\\.Net\\NorthWind\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6049,8 +6049,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Dell\\source\\repos\\NorthWind\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\Dell\\source\\repos\\NorthWind\\Entities\\Entities.csproj"
+            "C:\\Users\\Dell\\Desktop\\mydevLogs\\.Net\\NorthWind\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\Dell\\Desktop\\mydevLogs\\.Net\\NorthWind\\Entities\\Entities.csproj"
             }
           }
         }
