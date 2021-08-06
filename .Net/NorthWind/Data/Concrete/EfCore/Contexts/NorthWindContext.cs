@@ -3,12 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Data;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 #nullable disable
 
 namespace Data.Concrete.EfCore.Contexts
 {
-    public partial class NorthWindContext : DbContext
+    public partial class NorthWindContext : IdentityDbContext
     {
         public static readonly ILoggerFactory loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
         public NorthWindContext()
@@ -19,11 +20,11 @@ namespace Data.Concrete.EfCore.Contexts
             : base(options)
         {
         }
-        /*
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-U6PGBQU\\ADMINSQL;Database=NorthWind;Trusted_Connection=True;");
-        }*/
+            optionsBuilder.UseSqlServer("Server=DESKTOP-U6PGBQU\\ADMINSQL;Database=NorthWindJwt;Trusted_Connection=True;");
+        }
         public virtual DbSet<AlphabeticalListOfProduct> AlphabeticalListOfProducts { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<CategorySalesFor1997> CategorySalesFor1997s { get; set; }
@@ -56,6 +57,7 @@ namespace Data.Concrete.EfCore.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.HasAnnotation("Relational:Collation", "Turkish_CI_AS");
 
             modelBuilder.Entity<AlphabeticalListOfProduct>(entity =>
