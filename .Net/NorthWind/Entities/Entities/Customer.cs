@@ -9,7 +9,6 @@ namespace Data
     {
         public Customer()
         {
-            CustomerCustomerDemos = new HashSet<CustomerCustomerDemo>();
             Orders = new HashSet<Order>();
         }
 
@@ -25,7 +24,6 @@ namespace Data
         public string Phone { get; set; }
         public string Fax { get; set; }
 
-        public virtual ICollection<CustomerCustomerDemo> CustomerCustomerDemos { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "az64fEYPHOITCytyzWqliLP3B+hAkBeFhKtaTf4hjaM09DGJpTFBHpiT5UCZzEwcGfHUbJQ7j6VQXQE9uBD0kQ==",
+  "dgSpecHash": "64aIu6KiUeaVrH2wHhS5efc41u4Lnspura9a7UL5kmbqhpIjiPBGKXOjZAeVcv/YWlWDWpYa5qFOT3718pTaCQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dell\\source\\repos\\NorthWind\\Web\\Web.csproj",
+  "projectFilePath": "C:\\Users\\Dell\\Desktop\\mydevLogs\\.Net\\NorthWind\\Web\\Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dell\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Data;
-using Microsoft.Extensions.Logging;
+using Entities.Entities;
 
 #nullable disable
 
@@ -10,7 +10,6 @@ namespace Data.Concrete.EfCore.Contexts
 {
     public partial class NorthWindContext : DbContext
     {
-        public static readonly ILoggerFactory loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
         public NorthWindContext()
         {
         }
@@ -19,69 +18,29 @@ namespace Data.Concrete.EfCore.Contexts
             : base(options)
         {
         }
-        /*
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-U6PGBQU\\ADMINSQL;Database=NorthWind;Trusted_Connection=True;");
-        }*/
-        public virtual DbSet<AlphabeticalListOfProduct> AlphabeticalListOfProducts { get; set; }
+
         public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<CategorySalesFor1997> CategorySalesFor1997s { get; set; }
-        public virtual DbSet<CurrentProductList> CurrentProductLists { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<CustomerAndSuppliersByCity> CustomerAndSuppliersByCities { get; set; }
-        public virtual DbSet<CustomerCustomerDemo> CustomerCustomerDemos { get; set; }
-        public virtual DbSet<CustomerDemographic> CustomerDemographics { get; set; }
+        public virtual DbSet<CustomerGroupThreshold> CustomerGroupThresholds { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
-        public virtual DbSet<EmployeeTerritory> EmployeeTerritories { get; set; }
-        public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
-        public virtual DbSet<OrderDetailsExtended> OrderDetailsExtendeds { get; set; }
-        public virtual DbSet<OrderSubtotal> OrderSubtotals { get; set; }
-        public virtual DbSet<OrdersQry> OrdersQries { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<ProductSalesFor1997> ProductSalesFor1997s { get; set; }
-        public virtual DbSet<ProductsAboveAveragePrice> ProductsAboveAveragePrices { get; set; }
-        public virtual DbSet<ProductsByCategory> ProductsByCategories { get; set; }
-        public virtual DbSet<QuarterlyOrder> QuarterlyOrders { get; set; }
-        public virtual DbSet<Region> Regions { get; set; }
-        public virtual DbSet<SalesByCategory> SalesByCategories { get; set; }
-        public virtual DbSet<SalesTotalsByAmount> SalesTotalsByAmounts { get; set; }
         public virtual DbSet<Shipper> Shippers { get; set; }
-        public virtual DbSet<SummaryOfSalesByQuarter> SummaryOfSalesByQuarters { get; set; }
-        public virtual DbSet<SummaryOfSalesByYear> SummaryOfSalesByYears { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
-        public virtual DbSet<Territory> Territories { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Server=DESKTOP-U6PGBQU\\ADMINSQL;Database=NorthWindJwt22;Trusted_Connection=True;");
+            }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "Turkish_CI_AS");
-
-            modelBuilder.Entity<AlphabeticalListOfProduct>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("Alphabetical list of products");
-
-                entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
-
-                entity.Property(e => e.CategoryName)
-                    .IsRequired()
-                    .HasMaxLength(15);
-
-                entity.Property(e => e.ProductId).HasColumnName("ProductID");
-
-                entity.Property(e => e.ProductName)
-                    .IsRequired()
-                    .HasMaxLength(40);
-
-                entity.Property(e => e.QuantityPerUnit).HasMaxLength(20);
-
-                entity.Property(e => e.SupplierId).HasColumnName("SupplierID");
-
-                entity.Property(e => e.UnitPrice).HasColumnType("money");
-            });
+            modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
             modelBuilder.Entity<Category>(entity =>
             {
@@ -96,34 +55,6 @@ namespace Data.Concrete.EfCore.Contexts
                 entity.Property(e => e.Description).HasColumnType("ntext");
 
                 entity.Property(e => e.Picture).HasColumnType("image");
-            });
-
-            modelBuilder.Entity<CategorySalesFor1997>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("Category Sales for 1997");
-
-                entity.Property(e => e.CategoryName)
-                    .IsRequired()
-                    .HasMaxLength(15);
-
-                entity.Property(e => e.CategorySales).HasColumnType("money");
-            });
-
-            modelBuilder.Entity<CurrentProductList>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("Current Product List");
-
-                entity.Property(e => e.ProductId)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("ProductID");
-
-                entity.Property(e => e.ProductName)
-                    .IsRequired()
-                    .HasMaxLength(40);
             });
 
             modelBuilder.Entity<Customer>(entity =>
@@ -164,67 +95,17 @@ namespace Data.Concrete.EfCore.Contexts
                 entity.Property(e => e.Region).HasMaxLength(15);
             });
 
-            modelBuilder.Entity<CustomerAndSuppliersByCity>(entity =>
+            modelBuilder.Entity<CustomerGroupThreshold>(entity =>
             {
                 entity.HasNoKey();
 
-                entity.ToView("Customer and Suppliers by City");
-
-                entity.Property(e => e.City).HasMaxLength(15);
-
-                entity.Property(e => e.CompanyName)
-                    .IsRequired()
-                    .HasMaxLength(40);
-
-                entity.Property(e => e.ContactName).HasMaxLength(30);
-
-                entity.Property(e => e.Relationship)
-                    .IsRequired()
-                    .HasMaxLength(9)
+                entity.Property(e => e.CustomerGroupName)
+                    .HasMaxLength(20)
                     .IsUnicode(false);
-            });
 
-            modelBuilder.Entity<CustomerCustomerDemo>(entity =>
-            {
-                entity.HasKey(e => new { e.CustomerId, e.CustomerTypeId })
-                    .IsClustered(false);
+                entity.Property(e => e.RangeBottom).HasColumnType("money");
 
-                entity.ToTable("CustomerCustomerDemo");
-
-                entity.Property(e => e.CustomerId)
-                    .HasMaxLength(5)
-                    .HasColumnName("CustomerID")
-                    .IsFixedLength(true);
-
-                entity.Property(e => e.CustomerTypeId)
-                    .HasMaxLength(10)
-                    .HasColumnName("CustomerTypeID")
-                    .IsFixedLength(true);
-
-                entity.HasOne(d => d.Customer)
-                    .WithMany(p => p.CustomerCustomerDemos)
-                    .HasForeignKey(d => d.CustomerId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_CustomerCustomerDemo_Customers");
-
-                entity.HasOne(d => d.CustomerType)
-                    .WithMany(p => p.CustomerCustomerDemos)
-                    .HasForeignKey(d => d.CustomerTypeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_CustomerCustomerDemo");
-            });
-
-            modelBuilder.Entity<CustomerDemographic>(entity =>
-            {
-                entity.HasKey(e => e.CustomerTypeId)
-                    .IsClustered(false);
-
-                entity.Property(e => e.CustomerTypeId)
-                    .HasMaxLength(10)
-                    .HasColumnName("CustomerTypeID")
-                    .IsFixedLength(true);
-
-                entity.Property(e => e.CustomerDesc).HasColumnType("ntext");
+                entity.Property(e => e.RangeTop).HasColumnType("money");
             });
 
             modelBuilder.Entity<Employee>(entity =>
@@ -277,96 +158,6 @@ namespace Data.Concrete.EfCore.Contexts
                     .HasConstraintName("FK_Employees_Employees");
             });
 
-            modelBuilder.Entity<EmployeeTerritory>(entity =>
-            {
-                entity.HasKey(e => new { e.EmployeeId, e.TerritoryId })
-                    .IsClustered(false);
-
-                entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
-
-                entity.Property(e => e.TerritoryId)
-                    .HasMaxLength(20)
-                    .HasColumnName("TerritoryID");
-
-                entity.HasOne(d => d.Employee)
-                    .WithMany(p => p.EmployeeTerritories)
-                    .HasForeignKey(d => d.EmployeeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_EmployeeTerritories_Employees");
-
-                entity.HasOne(d => d.Territory)
-                    .WithMany(p => p.EmployeeTerritories)
-                    .HasForeignKey(d => d.TerritoryId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_EmployeeTerritories_Territories");
-            });
-
-            modelBuilder.Entity<Invoice>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("Invoices");
-
-                entity.Property(e => e.Address).HasMaxLength(60);
-
-                entity.Property(e => e.City).HasMaxLength(15);
-
-                entity.Property(e => e.Country).HasMaxLength(15);
-
-                entity.Property(e => e.CustomerId)
-                    .HasMaxLength(5)
-                    .HasColumnName("CustomerID")
-                    .IsFixedLength(true);
-
-                entity.Property(e => e.CustomerName)
-                    .IsRequired()
-                    .HasMaxLength(40);
-
-                entity.Property(e => e.ExtendedPrice).HasColumnType("money");
-
-                entity.Property(e => e.Freight).HasColumnType("money");
-
-                entity.Property(e => e.OrderDate).HasColumnType("datetime");
-
-                entity.Property(e => e.OrderId).HasColumnName("OrderID");
-
-                entity.Property(e => e.PostalCode).HasMaxLength(10);
-
-                entity.Property(e => e.ProductId).HasColumnName("ProductID");
-
-                entity.Property(e => e.ProductName)
-                    .IsRequired()
-                    .HasMaxLength(40);
-
-                entity.Property(e => e.Region).HasMaxLength(15);
-
-                entity.Property(e => e.RequiredDate).HasColumnType("datetime");
-
-                entity.Property(e => e.Salesperson)
-                    .IsRequired()
-                    .HasMaxLength(31);
-
-                entity.Property(e => e.ShipAddress).HasMaxLength(60);
-
-                entity.Property(e => e.ShipCity).HasMaxLength(15);
-
-                entity.Property(e => e.ShipCountry).HasMaxLength(15);
-
-                entity.Property(e => e.ShipName).HasMaxLength(40);
-
-                entity.Property(e => e.ShipPostalCode).HasMaxLength(10);
-
-                entity.Property(e => e.ShipRegion).HasMaxLength(15);
-
-                entity.Property(e => e.ShippedDate).HasColumnType("datetime");
-
-                entity.Property(e => e.ShipperName)
-                    .IsRequired()
-                    .HasMaxLength(40);
-
-                entity.Property(e => e.UnitPrice).HasColumnType("money");
-            });
-
             modelBuilder.Entity<Order>(entity =>
             {
                 entity.HasIndex(e => e.CustomerId, "CustomerID");
@@ -388,6 +179,7 @@ namespace Data.Concrete.EfCore.Contexts
                 entity.Property(e => e.OrderId).HasColumnName("OrderID");
 
                 entity.Property(e => e.CustomerId)
+                    .IsRequired()
                     .HasMaxLength(5)
                     .HasColumnName("CustomerID")
                     .IsFixedLength(true);
@@ -419,6 +211,7 @@ namespace Data.Concrete.EfCore.Contexts
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.CustomerId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Orders_Customers");
 
                 entity.HasOne(d => d.Employee)
@@ -437,8 +230,6 @@ namespace Data.Concrete.EfCore.Contexts
                 entity.HasKey(e => new { e.OrderId, e.ProductId })
                     .HasName("PK_Order_Details");
 
-                entity.ToTable("Order Details");
-
                 entity.HasIndex(e => e.OrderId, "OrderID");
 
                 entity.HasIndex(e => e.OrderId, "OrdersOrder_Details");
@@ -451,7 +242,7 @@ namespace Data.Concrete.EfCore.Contexts
 
                 entity.Property(e => e.ProductId).HasColumnName("ProductID");
 
-                entity.Property(e => e.Quantity).HasDefaultValueSql("((1))");
+                entity.Property(e => e.Quantity).HasDefaultValueSql("(1)");
 
                 entity.Property(e => e.UnitPrice).HasColumnType("money");
 
@@ -466,86 +257,6 @@ namespace Data.Concrete.EfCore.Contexts
                     .HasForeignKey(d => d.ProductId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Order_Details_Products");
-            });
-
-            modelBuilder.Entity<OrderDetailsExtended>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("Order Details Extended");
-
-                entity.Property(e => e.ExtendedPrice).HasColumnType("money");
-
-                entity.Property(e => e.OrderId).HasColumnName("OrderID");
-
-                entity.Property(e => e.ProductId).HasColumnName("ProductID");
-
-                entity.Property(e => e.ProductName)
-                    .IsRequired()
-                    .HasMaxLength(40);
-
-                entity.Property(e => e.UnitPrice).HasColumnType("money");
-            });
-
-            modelBuilder.Entity<OrderSubtotal>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("Order Subtotals");
-
-                entity.Property(e => e.OrderId).HasColumnName("OrderID");
-
-                entity.Property(e => e.Subtotal).HasColumnType("money");
-            });
-
-            modelBuilder.Entity<OrdersQry>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("Orders Qry");
-
-                entity.Property(e => e.Address).HasMaxLength(60);
-
-                entity.Property(e => e.City).HasMaxLength(15);
-
-                entity.Property(e => e.CompanyName)
-                    .IsRequired()
-                    .HasMaxLength(40);
-
-                entity.Property(e => e.Country).HasMaxLength(15);
-
-                entity.Property(e => e.CustomerId)
-                    .HasMaxLength(5)
-                    .HasColumnName("CustomerID")
-                    .IsFixedLength(true);
-
-                entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
-
-                entity.Property(e => e.Freight).HasColumnType("money");
-
-                entity.Property(e => e.OrderDate).HasColumnType("datetime");
-
-                entity.Property(e => e.OrderId).HasColumnName("OrderID");
-
-                entity.Property(e => e.PostalCode).HasMaxLength(10);
-
-                entity.Property(e => e.Region).HasMaxLength(15);
-
-                entity.Property(e => e.RequiredDate).HasColumnType("datetime");
-
-                entity.Property(e => e.ShipAddress).HasMaxLength(60);
-
-                entity.Property(e => e.ShipCity).HasMaxLength(15);
-
-                entity.Property(e => e.ShipCountry).HasMaxLength(15);
-
-                entity.Property(e => e.ShipName).HasMaxLength(40);
-
-                entity.Property(e => e.ShipPostalCode).HasMaxLength(10);
-
-                entity.Property(e => e.ShipRegion).HasMaxLength(15);
-
-                entity.Property(e => e.ShippedDate).HasColumnType("datetime");
             });
 
             modelBuilder.Entity<Product>(entity =>
@@ -570,17 +281,17 @@ namespace Data.Concrete.EfCore.Contexts
 
                 entity.Property(e => e.QuantityPerUnit).HasMaxLength(20);
 
-                entity.Property(e => e.ReorderLevel).HasDefaultValueSql("((0))");
+                entity.Property(e => e.ReorderLevel).HasDefaultValueSql("(0)");
 
                 entity.Property(e => e.SupplierId).HasColumnName("SupplierID");
 
                 entity.Property(e => e.UnitPrice)
                     .HasColumnType("money")
-                    .HasDefaultValueSql("((0))");
+                    .HasDefaultValueSql("(0)");
 
-                entity.Property(e => e.UnitsInStock).HasDefaultValueSql("((0))");
+                entity.Property(e => e.UnitsInStock).HasDefaultValueSql("(0)");
 
-                entity.Property(e => e.UnitsOnOrder).HasDefaultValueSql("((0))");
+                entity.Property(e => e.UnitsOnOrder).HasDefaultValueSql("(0)");
 
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Products)
@@ -593,124 +304,6 @@ namespace Data.Concrete.EfCore.Contexts
                     .HasConstraintName("FK_Products_Suppliers");
             });
 
-            modelBuilder.Entity<ProductSalesFor1997>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("Product Sales for 1997");
-
-                entity.Property(e => e.CategoryName)
-                    .IsRequired()
-                    .HasMaxLength(15);
-
-                entity.Property(e => e.ProductName)
-                    .IsRequired()
-                    .HasMaxLength(40);
-
-                entity.Property(e => e.ProductSales).HasColumnType("money");
-            });
-
-            modelBuilder.Entity<ProductsAboveAveragePrice>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("Products Above Average Price");
-
-                entity.Property(e => e.ProductName)
-                    .IsRequired()
-                    .HasMaxLength(40);
-
-                entity.Property(e => e.UnitPrice).HasColumnType("money");
-            });
-
-            modelBuilder.Entity<ProductsByCategory>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("Products by Category");
-
-                entity.Property(e => e.CategoryName)
-                    .IsRequired()
-                    .HasMaxLength(15);
-
-                entity.Property(e => e.ProductName)
-                    .IsRequired()
-                    .HasMaxLength(40);
-
-                entity.Property(e => e.QuantityPerUnit).HasMaxLength(20);
-            });
-
-            modelBuilder.Entity<QuarterlyOrder>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("Quarterly Orders");
-
-                entity.Property(e => e.City).HasMaxLength(15);
-
-                entity.Property(e => e.CompanyName).HasMaxLength(40);
-
-                entity.Property(e => e.Country).HasMaxLength(15);
-
-                entity.Property(e => e.CustomerId)
-                    .HasMaxLength(5)
-                    .HasColumnName("CustomerID")
-                    .IsFixedLength(true);
-            });
-
-            modelBuilder.Entity<Region>(entity =>
-            {
-                entity.HasKey(e => e.RegionId)
-                    .IsClustered(false);
-
-                entity.ToTable("Region");
-
-                entity.Property(e => e.RegionId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("RegionID");
-
-                entity.Property(e => e.RegionDescription)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsFixedLength(true);
-            });
-
-            modelBuilder.Entity<SalesByCategory>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("Sales by Category");
-
-                entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
-
-                entity.Property(e => e.CategoryName)
-                    .IsRequired()
-                    .HasMaxLength(15);
-
-                entity.Property(e => e.ProductName)
-                    .IsRequired()
-                    .HasMaxLength(40);
-
-                entity.Property(e => e.ProductSales).HasColumnType("money");
-            });
-
-            modelBuilder.Entity<SalesTotalsByAmount>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("Sales Totals by Amount");
-
-                entity.Property(e => e.CompanyName)
-                    .IsRequired()
-                    .HasMaxLength(40);
-
-                entity.Property(e => e.OrderId).HasColumnName("OrderID");
-
-                entity.Property(e => e.SaleAmount).HasColumnType("money");
-
-                entity.Property(e => e.ShippedDate).HasColumnType("datetime");
-            });
-
             modelBuilder.Entity<Shipper>(entity =>
             {
                 entity.Property(e => e.ShipperId).HasColumnName("ShipperID");
@@ -720,32 +313,6 @@ namespace Data.Concrete.EfCore.Contexts
                     .HasMaxLength(40);
 
                 entity.Property(e => e.Phone).HasMaxLength(24);
-            });
-
-            modelBuilder.Entity<SummaryOfSalesByQuarter>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("Summary of Sales by Quarter");
-
-                entity.Property(e => e.OrderId).HasColumnName("OrderID");
-
-                entity.Property(e => e.ShippedDate).HasColumnType("datetime");
-
-                entity.Property(e => e.Subtotal).HasColumnType("money");
-            });
-
-            modelBuilder.Entity<SummaryOfSalesByYear>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("Summary of Sales by Year");
-
-                entity.Property(e => e.OrderId).HasColumnName("OrderID");
-
-                entity.Property(e => e.ShippedDate).HasColumnType("datetime");
-
-                entity.Property(e => e.Subtotal).HasColumnType("money");
             });
 
             modelBuilder.Entity<Supplier>(entity =>
@@ -781,27 +348,30 @@ namespace Data.Concrete.EfCore.Contexts
                 entity.Property(e => e.Region).HasMaxLength(15);
             });
 
-            modelBuilder.Entity<Territory>(entity =>
+            modelBuilder.Entity<User>(entity =>
             {
-                entity.HasKey(e => e.TerritoryId)
-                    .IsClustered(false);
+                entity.ToTable("User");
 
-                entity.Property(e => e.TerritoryId)
-                    .HasMaxLength(20)
-                    .HasColumnName("TerritoryID");
-
-                entity.Property(e => e.RegionId).HasColumnName("RegionID");
-
-                entity.Property(e => e.TerritoryDescription)
+                entity.Property(e => e.FirstName)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .IsFixedLength(true);
+                    .HasMaxLength(250);
 
-                entity.HasOne(d => d.Region)
-                    .WithMany(p => p.Territories)
-                    .HasForeignKey(d => d.RegionId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Territories_Region");
+                entity.Property(e => e.LastName)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.PasswordHash)
+                    .IsRequired()
+                    .HasMaxLength(2048)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.UserName)
+                    .IsRequired()
+                    .HasMaxLength(50);
+                entity.Property(e => e.Role)
+                    .HasConversion(
+                        v => v.ToString(),
+                        v => (Role)Enum.Parse(typeof(Role), v));
             });
 
             OnModelCreatingPartial(modelBuilder);
